@@ -12,13 +12,15 @@
 
 <body>
     <div class="container1">
-        <h1>Add Member</h1>
+        <h1>Add Asset</h1>
         <form action="{% url 'addAsset' %}" method='post'>
              {% csrf_token %}
-            <label for="">First Name</label><br><br>
-            <input type="text" name='fname'><br><br>
-            <label for="">Last Name</label><br><br>
-            <input type="text" name='lname'><br><br>
+             <label for="">User</label><br><br>
+            <input type="text" name='user'><br><br>
+            <label for="">Asset name</label><br><br>
+            <input type="text" name='name'><br><br>
+            <label for="">Asset type</label><br><br>
+            <input type="text" name='type'><br><br>
            
             <button type="submit" id="new">Submit</button>
         </form>
