@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assets Management</title>
+</head>
+ {% load static %} 
+<link rel='stylesheet' href='{% static 'style.css' %}' />
+
+<body>
+    <div class="container">
+        <h1>Assets</h1>
+        <table id="customers" border="1">
+            <thead>
+                <th>Id</th>
+                <th>User</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Purchase Date</th>
+                <th>Update Date</th>
+                <th>Deleted Date</th>
+                <th>Status</th>
+                <th colspan="2" id="mid">Action</th>
+            </thead>
+            {% for y in asset %}
+            <tr>
+                <td>{{y.id}}</td>
+                <td>{{y.user}}</td>
+                <td>{{y.name}}</td>
+                <td>{{y.type}}</td>
+                <td>{{y.purchased_at}}</td>
+                <td>{{y.updated_at}}</td>
+                <td>{{y.deleted_at}}</td>
+                <td>{{y.status}}</td>
+                <td>
+                    <a href=""><button id="up">Update</button> </a>
+                </td>
+                <td>
+                    {% comment %} <a href="'delete'/{{x.id}}"><button id="del">Delete</button></a> {% endcomment %}
+                    <a href=""><button id="del">Delete</button></a>
+                </td>
+
+            </tr>
+            {%endfor%}
+        
+        </table>
+        <br><br>
+        {% comment %} <a href="{% url 'add' %}"><button id="new3">Add Member</button></a> {% endcomment %}
+        <a href=""><button id="new3">Add Member</button></a>
+    </div>
+</body>
+
+</html>
